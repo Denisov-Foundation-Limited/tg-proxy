@@ -1,0 +1,10 @@
+services:
+  tg-proxy:
+    build: .
+    container_name: tg-proxy
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
+      TELEGRAM_API_BASE: https://api.telegram.org
+    restart: unless-stopped
