@@ -44,7 +44,11 @@ app.all("*", async (req, res) => {
   const controller = new AbortController();
   const targetUrl = buildTargetUrl(req);
 
-  req.on("close", () => {
+  req.on("aborted", () => {
+    controller.abort();
+  });
+
+  res.on("close", () => {
     if (!res.writableEnded) {
       controller.abort();
     }
