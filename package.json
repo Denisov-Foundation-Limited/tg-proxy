@@ -2,6 +2,7 @@
   "name": "tg-proxy",
   "version": "1.0.0",
   "description": "Simple Telegram Bot API HTTP proxy",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -10,6 +11,7 @@
     "node": ">=20"
   },
   "dependencies": {
+    "awilix": "^12.0.5",
     "express": "^4.21.2"
   }
 }
